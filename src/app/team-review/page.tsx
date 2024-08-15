@@ -40,7 +40,7 @@ const TeamReview = () => {
   const teamNames = Object.keys(teams) as TeamName[];
   const [selectedTeam, setSelectedTeam] = useState<TeamName>(teamNames[0]);
 
-  const handleDragEnd = (result) => {
+  const handleDragEnd = (result: any) => {
     if (!result.destination) return;
 
     const { source, destination } = result;
@@ -100,7 +100,7 @@ const TeamReview = () => {
                       <h3 className="text-2xl font-semibold text-indigo-400 mb-4">
                         Playing 7
                       </h3>
-                      {teams[selectedTeam].players.map((player, index) => (
+                      {teams[selectedTeam]?.players.map((player, index) => (
                         <PlayerCard
                           key={`player-${index}`}
                           index={index}
@@ -123,7 +123,7 @@ const TeamReview = () => {
                       <h3 className="text-2xl font-semibold text-indigo-400 mb-4">
                         Substitutes
                       </h3>
-                      {teams[selectedTeam].subs.map((sub, index) => (
+                      {teams[selectedTeam]?.subs.map((sub, index) => (
                         <PlayerCard
                           key={`sub-${index}`}
                           index={index}

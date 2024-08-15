@@ -8,8 +8,8 @@ import { TEAMS } from "@/constants";
 import { getTeamsNames, setTeamsOnStart } from "@/utils";
 
 export default function Home() {
-  const [teamA, setTeamA] = useState<TeamName>("BENGALURU_BULLS");
-  const [teamB, setTeamB] = useState<TeamName>("BENGAL_WARRIORS");
+  const [teamA, setTeamA] = useState<TeamName>("Bengaluru Bulls");
+  const [teamB, setTeamB] = useState<TeamName>("Bengal Warriors");
   const teamsNames = getTeamsNames();
   const teams = TEAMS;
   const [matchDate, setMatchDate] = useState(
@@ -18,7 +18,7 @@ export default function Home() {
 
   const router = useRouter();
 
-  const handleStartMatch = () => {  
+  const handleStartMatch = () => {
     setTeamsOnStart(teams[teamA], teams[teamB], matchDate);
     router.push("/team-review");
   };

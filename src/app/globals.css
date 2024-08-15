@@ -31,3 +31,38 @@ body {
     text-wrap: balance;
   }
 }
+
+@keyframes scroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-scroll {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll 10s linear infinite;
+}
+
+/* global.css or any CSS file */
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20%,
+  60% {
+    transform: translateX(-5px);
+  }
+  40%,
+  80% {
+    transform: translateX(5px);
+  }
+}
+
+.shaking {
+  animation: shake 0.5s infinite;
+}

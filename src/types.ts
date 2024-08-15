@@ -1,18 +1,18 @@
 export type TeamName =
-  | "BENGAL_WARRIORS"
-  | "DABANG_DELHI"
-  | "U_MUMBA"
-  | "BENGALURU_BULLS"
-  | "GUJARAT_FORTUNEGIANTS"
-  | "HARYANA_STEELERS"
-  | "JAIPUR_PINK_PANTHERS"
-  | "PATNA_PIRATES"
-  | "PUNERI_PALTAN"
-  | "TELUGU_TITANS"
-  | "TAMIL_THAIWAS"
-  | "UP_YODDHA";
+  | "Bengal Warriors"
+  | "Dabang Delhi"
+  | "U Mumba"
+  | "Bengaluru Bulls"
+  | "Gujarat Fortunegiants"
+  | "Haryana Steelers"
+  | "Jaipur Pink Panthers"
+  | "Patna Pirates"
+  | "Puneri Paltan"
+  | "Telugu Titans"
+  | "Tamil Thaiwas"
+  | "UP Yoddha";
 
-export type Role = "RAIDER" | "DEFENDER" | "ALL_ROUNDER";
+export type Role = "Raider" | "Defender" | "All-Rounder";
 
 export type TeamMapping = {
   [key in TeamName]?: Team;
@@ -21,6 +21,9 @@ export type TeamMapping = {
 export interface MatchState {
   teams: TeamMapping;
   matchTime: string;
+  scores: {
+    [key in TeamName]?: number;
+  };
 }
 
 export interface Player {
@@ -33,5 +36,4 @@ export interface Team {
   name: TeamName;
   players: Player[];
   subs: Player[];
-  score: number;
 }

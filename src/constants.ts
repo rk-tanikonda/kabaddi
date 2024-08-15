@@ -1,7 +1,7 @@
 import { Team, TeamName } from "@/types";
 
 export const TEAMS: Record<TeamName, Team> = {
-  BENGAL_WARRIORS: {
+  "Bengal Warriors": {
     name: "Bengal Warriors",
     players: [
       { name: "Maninder Singh", role: "Raider", no: 1 },
@@ -19,7 +19,7 @@ export const TEAMS: Record<TeamName, Team> = {
       { name: "Ravindra Ramesh Kumawat", role: "Raider", no: 11 },
     ],
   },
-  DABANG_DELHI: {
+  "Dabang Delhi": {
     name: "Dabang Delhi",
     players: [
       { name: "Naveen Kumar", role: "Raider", no: 12 },
@@ -37,7 +37,7 @@ export const TEAMS: Record<TeamName, Team> = {
       { name: "Sombir", role: "Defender", no: 22 },
     ],
   },
-  U_MUMBA: {
+  "U Mumba": {
     name: "U Mumba",
     players: [
       { name: "Fazel Atrachali", role: "Defender", no: 23 },
@@ -55,7 +55,7 @@ export const TEAMS: Record<TeamName, Team> = {
       { name: "Dong Geon Lee", role: "Raider", no: 33 },
     ],
   },
-  PATNA_PIRATES: {
+  "Patna Pirates": {
     name: "Patna Pirates",
     players: [
       { name: "Pardeep Narwal", role: "Raider", no: 34 },
@@ -73,7 +73,7 @@ export const TEAMS: Record<TeamName, Team> = {
       { name: "Surender Nada", role: "Defender", no: 44 },
     ],
   },
-  TELUGU_TITANS: {
+  "Telugu Titans": {
     name: "Telugu Titans",
     players: [
       { name: "Siddharth Desai", role: "Raider", no: 45 },
@@ -91,8 +91,8 @@ export const TEAMS: Record<TeamName, Team> = {
       { name: "Ankit Beniwal", role: "Raider", no: 55 },
     ],
   },
-  TAMIL_THAIWAS: {
-    name: "Tamil Thalaivas",
+  "Tamil Thaiwas": {
+    name: "Tamil Thaiwas",
     players: [
       { name: "Ajay Thakur", role: "Raider", no: 56 },
       { name: "Manjeet Chhillar", role: "All-Rounder", no: 57 },
@@ -109,7 +109,7 @@ export const TEAMS: Record<TeamName, Team> = {
       { name: "Ajeet", role: "Defender", no: 66 },
     ],
   },
-  GUJARAT_FORTUNEGIANTS: {
+  "Gujarat Fortunegiants": {
     name: "Gujarat Fortunegiants",
     players: [
       { name: "Sunil Kumar", role: "Defender", no: 67 },
@@ -127,7 +127,7 @@ export const TEAMS: Record<TeamName, Team> = {
       { name: "Ruturaj Koravi", role: "Defender", no: 77 },
     ],
   },
-  HARYANA_STEELERS: {
+  "Haryana Steelers": {
     name: "Haryana Steelers",
     players: [
       { name: "Vikash Kandola", role: "Raider", no: 78 },
@@ -145,7 +145,7 @@ export const TEAMS: Record<TeamName, Team> = {
       { name: "Chand Singh", role: "Defender", no: 88 },
     ],
   },
-  PUNERI_PALTAN: {
+  "Puneri Paltan": {
     name: "Puneri Paltan",
     players: [
       { name: "Nitin Tomar", role: "Raider", no: 89 },
@@ -163,7 +163,7 @@ export const TEAMS: Record<TeamName, Team> = {
       { name: "Darshan Kadian", role: "Raider", no: 99 },
     ],
   },
-  JAIPUR_PINK_PANTHERS: {
+  "Jaipur Pink Panthers": {
     name: "Jaipur Pink Panthers",
     players: [
       { name: "Deepak Niwas Hooda", role: "All-Rounder", no: 100 },
@@ -181,7 +181,7 @@ export const TEAMS: Record<TeamName, Team> = {
       { name: "Dong Geon Lee", role: "Raider", no: 110 },
     ],
   },
-  UP_YODDHA: {
+  "UP Yoddha": {
     name: "UP Yoddha",
     players: [
       { name: "Shrikant Jadhav", role: "Raider", no: 111 },
@@ -199,7 +199,7 @@ export const TEAMS: Record<TeamName, Team> = {
       { name: "Mohsen Maghsoudlou", role: "All-Rounder", no: 121 },
     ],
   },
-  BENGALURU_BULLS: {
+  "Bengaluru Bulls": {
     name: "Bengaluru Bulls",
     players: [
       { name: "Pawan Sehrawat", role: "Raider", no: 34 },

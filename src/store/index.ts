@@ -1,4 +1,4 @@
-import create from "zustand";
+import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { MatchState, TeamName, Team, Player } from "@/types";
 
@@ -6,6 +6,7 @@ import { MatchState, TeamName, Team, Player } from "@/types";
 const initialState: MatchState = {
   teams: {},
   matchTime: "",
+  scores: {},
 };
 
 // Create the store with persistence
@@ -37,60 +38,49 @@ const useMatchStore = create(
         })),
 
       updateTeamScore: (teamName, score) =>
-        set((state) => {
-          const team = state.teams[teamName];
-          if (!team) return state; // Return state unchanged if team is undefined
-          return {
-            teams: {
-              ...state.teams,
-              [teamName]: {
-                ...team,
-                score,
-              },
-            },
-          };
-        }),
+        set((state) => ({
+          scores: {
+            ...state.scores,
+            [teamName]: score,
+          },
+        })),
 
       addPlayerToTeam: (teamName, player) =>
-        set((state) => {
-          const team = state.teams[teamName];
-          if (!team) return state; // Return state unchanged if team is undefined
-          return {
-            teams: {
-              ...state.teams,
-              [teamName]: {
-                ...team,
-                players: [...team.players, player],
-              },
+        set((state) => ({
+          teams: {
+            ...state.teams,
+            [teamName]: {
+              ...state.teams[teamName],
+              players: [...(state.teams[teamName]?.players || []), player],
             },
-          };
-        }),
+          },
+        })),
 
       addSubToTeam: (teamName, player) =>
-        set((state) => {
-          const team = state.teams[teamName];
-          if (!team) return state; // Return state unchanged if team is undefined
-          return {
-            teams: {
-              ...state.teams,
-              [teamName]: {
-                ...team,
-                subs: [...team.subs, player],
-              },
+        set((state) => ({
+          teams: {
+            ...state.teams,
+            [teamName]: {
+              ...state.teams[teamName],
+              subs: [...(state.teams[teamName]?.subs || []), player],
             },
-          };
-        }),
+          },
+        })),
 
       swapPlayerWithSub: (teamName, playerIndex, subIndex) =>
         set((state) => {
           const team = state.teams[teamName];
           if (!team) return state; // Return state unchanged if team is undefined
+
           const players = [...team.players];
           const subs = [...team.subs];
+
+          // Swap the player with the sub
           [players[playerIndex], subs[subIndex]] = [
             subs[subIndex],
             players[playerIndex],
           ];
+
           return {
             teams: {
               ...state.teams,
@@ -104,8 +94,8 @@ const useMatchStore = create(
         }),
     }),
     {
-      name: "match-store", // unique name
-      getStorage: () => localStorage, // (optional) by default, 'localStorage' is used
+      name: "match-store",
+      getStorage: () => localStorage,
     }
   )
 );

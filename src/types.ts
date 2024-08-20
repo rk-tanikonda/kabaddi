@@ -30,6 +30,7 @@ export interface Player {
   name: string;
   role: Role;
   no: number;
+  position?: string;
 }
 
 export interface Team {

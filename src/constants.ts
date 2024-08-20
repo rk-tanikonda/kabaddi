@@ -218,3 +218,9 @@ export const TEAMS: Record<TeamName, Team> = {
     ],
   },
 };
+
+export const POSITIONS = {
+  Defender: ["Left Corner", "Right Corner", "Left Cover", "Right Cover"],
+  Raider: ["Left In", "Right In"],
+  "All-Rounder": ["Middle"],
+};
